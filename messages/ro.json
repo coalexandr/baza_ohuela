@@ -1,0 +1,31 @@
+{
+  "Header": {
+    "home": "Acasă",
+    "allProducts": "Toate produsele",
+    "categories": "Categorii",
+    "contact": "Contacte"
+  },
+  "Footer": {
+    "description": "Comerț electronic modern pentru toți. Produse de calitate, cumpărături simple și livrare de încredere.",
+    "quickLinks": "Link-uri rapide",
+    "customerService": "Serviciu clienți",
+    "shippingInfo": "Informații despre livrare",
+    "returnsExchanges": "Returnări și schimburi",
+    "faq": "Întrebări frecvente",
+    "support": "Suport",
+    "contactUs": "Contactați-ne",
+    "copyright": "Toate drepturile rezervate."
+  },
+  "Hero": {
+    "title": "Comerț electronic modern pentru {everyone}",
+    "everyone": "Toți",
+    "subtitle": "Descoperiți o lume de produse de calitate, selectate pentru dvs. O experiență de cumpărături simplă, rapidă și de încredere.",
+    "shopNow": "Cumpără acum"
+  },
+  "FeaturedCategories": {
+    "title": "Cumpărați pe categorii"
+  },
+  "FeaturedProducts": {
+    "title": "Produse recomandate"
+  }
+}

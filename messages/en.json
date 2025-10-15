@@ -1,0 +1,31 @@
+{
+  "Header": {
+    "home": "Home",
+    "allProducts": "All Products",
+    "categories": "Categories",
+    "contact": "Contact"
+  },
+  "Footer": {
+    "description": "Modern eCommerce for everyone. Quality products, simple shopping, and trusted delivery.",
+    "quickLinks": "Quick Links",
+    "customerService": "Customer Service",
+    "shippingInfo": "Shipping Info",
+    "returnsExchanges": "Returns & Exchanges",
+    "faq": "FAQ",
+    "support": "Support",
+    "contactUs": "Contact Us",
+    "copyright": "All rights reserved."
+  },
+  "Hero": {
+    "title": "Modern eCommerce for {everyone}",
+    "everyone": "Everyone",
+    "subtitle": "Discover a world of quality products, curated for you. Simple, fast, and trustworthy shopping experience.",
+    "shopNow": "Shop Now"
+  },
+  "FeaturedCategories": {
+    "title": "Shop by Category"
+  },
+  "FeaturedProducts": {
+    "title": "Featured Products"
+  }
+}

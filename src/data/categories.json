@@ -1,0 +1,156 @@
+[
+  {
+    "id": 1,
+    "name": "Электроника",
+    "image": "https://images.unsplash.com/photo-1498049794561-7780e7231661?w=400&h=300&fit=crop",
+    "subcategories": [
+      {
+        "id": 101,
+        "name": "Смартфоны",
+        "image": "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=400&h=300&fit=crop"
+      },
+      {
+        "id": 102,
+        "name": "Ноутбуки",
+        "image": "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=400&h=300&fit=crop"
+      },
+      {
+        "id": 103,
+        "name": "Планшеты",
+        "image": "https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=400&h=300&fit=crop"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Одежда",
+    "image": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=400&h=300&fit=crop",
+    "subcategories": [
+      {
+        "id": 201,
+        "name": "Футболки",
+        "image": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400&h=300&fit=crop"
+      },
+      {
+        "id": 202,
+        "name": "Джинсы",
+        "image": "https://images.unsplash.com/photo-1542272604-787c3835535d?w=400&h=300&fit=crop"
+      },
+      {
+        "id": 203,
+        "name": "Куртки",
+        "image": "https://images.unsplash.com/photo-1551028719-00167b16eac5?w=400&h=300&fit=crop"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Дом и сад",
+    "image": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&h=300&fit=crop",
+    "subcategories": [
+      {
+        "id": 301,
+        "name": "Мебель",
+        "image": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&h=300&fit=crop"
+      },
+      {
+        "id": 302,
+        "name": "Садовый инструмент",
+        "image": "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=400&h=300&fit=crop"
+      },
+      {
+        "id": 303,
+        "name": "Декор",
+        "image": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&h=300&fit=crop"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Спорт и отдых",
+    "image": "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=300&fit=crop",
+    "subcategories": [
+      {
+        "id": 401,
+        "name": "Фитнес оборудование",
+        "image": "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=300&fit=crop"
+      },
+      {
+        "id": 402,
+        "name": "Туристическое снаряжение",
+        "image": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop"
+      },
+      {
+        "id": 403,
+        "name": "Велосипеды",
+        "image": "https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=400&h=300&fit=crop"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Книги и медиа",
+    "image": "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400&h=300&fit=crop",
+    "subcategories": [
+      {
+        "id": 501,
+        "name": "Художественная литература",
+        "image": "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400&h=300&fit=crop"
+      },
+      {
+        "id": 502,
+        "name": "Нон-фикшн",
+        "image": "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400&h=300&fit=crop"
+      },
+      {
+        "id": 503,
+        "name": "DVD диски",
+        "image": "https://images.unsplash.com/photo-1489599735734-79b4b9c0c5f?w=400&h=300&fit=crop"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Красота и здоровье",
+    "image": "https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=400&h=300&fit=crop",
+    "subcategories": [
+      {
+        "id": 601,
+        "name": "Уход за кожей",
+        "image": "https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=400&h=300&fit=crop"
+      },
+      {
+        "id": 602,
+        "name": "Уход за волосами",
+        "image": "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=400&h=300&fit=crop"
+      },
+      {
+        "id": 603,
+        "name": "Добавки",
+        "image": "https://images.unsplash.com/photo-1550572017-edd951aa8ca9?w=400&h=300&fit=crop"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Игрушки и игры",
+    "image": "https://images.unsplash.com/photo-1558877385-1199c1af4c0f?w=400&h=300&fit=crop",
+    "subcategories": [
+      {
+        "id": 701,
+        "name": "Настольные игры",
+        "image": "https://images.unsplash.com/photo-1558877385-1199c1af4c0f?w=400&h=300&fit=crop"
+      },
+      {
+        "id": 702,
+        "name": "Фигурки",
+        "image": "https://images.unsplash.com/photo-1558877385-1199c1af4c0f?w=400&h=300&fit=crop"
+      },
+      {
+        "id": 703,
+        "name": "Пазлы",
+        "image": "https://images.unsplash.com/photo-1558877385-1199c1af4c0f?w=400&h=300&fit=crop"
+      }
+    ]
+  }
+]
