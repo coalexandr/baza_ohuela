@@ -28,6 +28,12 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
       }
       return [...prevItems, { ...product, quantity: 1 }];
     });
+    try {
+      if (typeof window !== 'undefined') {
+        const evt = new CustomEvent('cart:add', { detail: { product } });
+        window.dispatchEvent(evt);
+      }
+    } catch {}
   };
 
   const removeFromCart = (productId: number) => {
@@ -42,7 +48,7 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
 
   const getCartTotal = () => {
     return cartItems.reduce(
-      (total, item) => total + item.price * item.quantity,
+      (total, item) => total + (item.price ?? 0) * item.quantity,
       0
     );
   };

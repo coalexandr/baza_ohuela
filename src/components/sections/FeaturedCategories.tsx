@@ -2,11 +2,32 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import categories from "@/data/categories.json";
+
+type CatWithImage = { name: string; image: string };
 
 const FeaturedCategories = () => {
-  const featured = categories.slice(0, 4);
+  const [featured, setFeatured] = useState<CatWithImage[]>([]);
+
+  useEffect(() => {
+    let active = true;
+    const load = async () => {
+      try {
+        const res = await fetch('/api/categories');
+        const data = await res.json();
+        const names: string[] = data.items || [];
+        const images: Record<string, string> = data.images || {};
+        const out: CatWithImage[] = names
+          .map((n) => ({ name: n, image: images[n] }))
+          .filter((c) => !!c.image)
+          .slice(0, 4);
+        if (active) setFeatured(out);
+      } catch {}
+    };
+    load();
+    return () => { active = false; };
+  }, []);
 
   return (
     <section className="py-20 bg-white">
@@ -18,26 +39,27 @@ const FeaturedCategories = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          Магазин по категориям
+          Популярные категории
         </motion.h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
           {featured.map((category, index) => (
             <motion.div
-              key={category.id}
+              key={category.name}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
             >
               <Link
-                href={`/products?category=${category.name}`}
+                href={`/products?category=${encodeURIComponent(category.name)}`}
                 className="group block relative overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
               >
-                <div className="aspect-square overflow-hidden">
+                <div className="relative aspect-square overflow-hidden">
                   <Image
                     src={category.image}
                     alt={category.name}
                     fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                     unoptimized
                     className="object-cover transition-transform duration-500 group-hover:scale-110"
                   />

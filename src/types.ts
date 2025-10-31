@@ -1,10 +1,16 @@
 export interface Product {
   id: number;
   name: string;
-  price: number;
+  price: number | null;
   description: string;
   image: string;
   category: string;
+  brand?: string;
+  images?: string[];
+  specs?: { name: string; value: string }[];
+  priceOld?: number | null;
+  url?: string;
+  breadcrumbs?: string[];
   reviews?: {
     rating: number;
     count: number;

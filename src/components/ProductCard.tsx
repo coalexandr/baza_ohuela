@@ -22,7 +22,7 @@ interface ProductCardProps {
 
 export function ProductCard({ product }: ProductCardProps) {
   return (
-    <Card className="h-full flex flex-col">
+    <Card className="h-full flex flex-col hover:shadow-lg transition-shadow duration-300">
       <CardHeader>
         <AspectRatio ratio={4 / 3}>
           <Image
@@ -30,13 +30,19 @@ export function ProductCard({ product }: ProductCardProps) {
             alt={product.name}
             className="rounded-md object-cover"
             fill
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
             unoptimized
           />
+          {product.price !== null && product.priceOld && product.priceOld > product.price && (
+            <div className="absolute top-2 left-2 bg-red-600 text-white text-xs font-bold px-2 py-1 rounded">
+              -{Math.round((1 - product.price / product.priceOld) * 100)}%
+            </div>
+          )}
         </AspectRatio>
       </CardHeader>
       <CardContent className="flex-grow">
-        <CardTitle>{product.name}</CardTitle>
-        <CardDescription>{product.category}</CardDescription>
+        <CardTitle className="line-clamp-2">{product.name}</CardTitle>
+        <CardDescription className="mt-1">{product.category}</CardDescription>
         {product.reviews && (
           <div className="flex items-center mt-2">
             {[...Array(5)].map((_, i) => (
@@ -56,7 +62,20 @@ export function ProductCard({ product }: ProductCardProps) {
         )}
       </CardContent>
       <CardFooter className="flex justify-between items-center">
-        <p className="font-semibold">{product.price.toLocaleString()} лей</p>
+        {product.price !== null ? (
+          <div className="flex items-baseline gap-2">
+            {product.priceOld ? (
+              <span className="text-sm text-gray-400 line-through">
+                {product.priceOld.toLocaleString()} MDL
+              </span>
+            ) : null}
+            <p className="font-semibold text-blue-600">
+              {product.price.toLocaleString()} MDL
+            </p>
+          </div>
+        ) : (
+          <p className="text-sm text-gray-500">Цена по запросу</p>
+        )}
         <Button asChild>
           <Link href={`/products/${product.id}`}>Подробнее</Link>
         </Button>

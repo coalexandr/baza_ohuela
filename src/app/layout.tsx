@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils";
 import { CartProvider } from "@/context/CartContext";
 import Header from "@/components/common/Header";
 import Footer from "@/components/common/Footer";
+import CartToast from "@/components/common/CartToast";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
@@ -29,6 +30,7 @@ export default function RootLayout({
         <CartProvider>
           <Header />
           <main>{children}</main>
+          <CartToast />
           <Footer />
         </CartProvider>
       </body>

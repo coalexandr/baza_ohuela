@@ -183,6 +183,7 @@ const AdminPage = () => {
                                 alt={product.name}
                                 width={40}
                                 height={40}
+                                unoptimized
                                 className="rounded-lg object-cover"
                               />
                             </div>
@@ -197,7 +198,7 @@ const AdminPage = () => {
                           <span className="text-sm text-gray-900">{product.category}</span>
                         </td>
                         <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-900">
-                          ${product.price.toFixed(2)}
+                          {product.price !== null ? `$${product.price.toFixed(2)}` : '—'}
                         </td>
                         <td className="px-4 py-4 whitespace-nowrap text-sm font-medium">
                           <div className="flex space-x-2">

@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Link from "next/link";
 import Image from "next/image";
@@ -16,6 +16,8 @@ const ProductCard = ({ product }: { product: Product }) => {
           src={product.image}
           alt={product.name}
           fill
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+          unoptimized
           className="object-cover transition-transform duration-300 group-hover:scale-110"
         />
         <div className="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -34,10 +36,22 @@ const ProductCard = ({ product }: { product: Product }) => {
             {product.name}
           </h3>
         </Link>
-        <p className="text-gray-600 mt-1">${product.price.toFixed(2)}</p>
+        {product.price !== null ? (
+          <div className="mt-1 flex items-baseline gap-2">
+            {product.priceOld ? (
+              <span className="text-sm text-gray-400 line-through">{product.priceOld.toLocaleString()} MDL</span>
+            ) : null}
+            <span className="text-gray-800 font-semibold">{product.price.toLocaleString()} MDL</span>
+          </div>
+        ) : (
+          <p className="text-gray-500 mt-1">Цена по запросу</p>
+        )}
       </div>
     </div>
   );
 };
 
 export default ProductCard;
+
+
+

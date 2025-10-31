@@ -1,11 +1,21 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import products from "@/data/products.json";
 import { ProductCard } from "@/components/ProductCard";
+import type { Product } from "@/types";
 
 const FeaturedProducts = () => {
-  const featured = products.slice(0, 4);
+  const [items, setItems] = useState<Product[]>([]);
+
+  useEffect(() => {
+    const controller = new AbortController();
+    fetch(`/api/products?limit=8`, { signal: controller.signal })
+      .then((r) => r.json())
+      .then((data) => setItems(data.items || []))
+      .catch(() => {});
+    return () => controller.abort();
+  }, []);
 
   return (
     <section className="py-20 bg-gray-50">
@@ -17,16 +27,16 @@ const FeaturedProducts = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          Рекомендуемые товары
+          Популярные товары
         </motion.h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-          {featured.map((product, index) => (
+          {items.map((product, index) => (
             <motion.div
               key={product.id}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
+              transition={{ duration: 0.6, delay: index * 0.05 }}
             >
               <ProductCard product={product} />
             </motion.div>
@@ -38,3 +48,4 @@ const FeaturedProducts = () => {
 };
 
 export default FeaturedProducts;
+
